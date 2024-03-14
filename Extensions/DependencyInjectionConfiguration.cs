@@ -3,6 +3,8 @@
 using FootballTransfersAPI.Data.Mappers;
 using FootballTransfersAPI.Data.Services;
 using FootballTransfersAPI.Data.Services.Interfaces;
+using FootballTransfersAPI.Data.Services.Interfaces.Messaging;
+using FootballTransfersAPI.Data.Services.Messaging;
 using FootballTransfersAPI.Model.Context;
 using FootballTransfersAPI.Model.Repository;
 using FootballTransfersAPI.Model.Repository.Interfaces;
@@ -36,6 +38,7 @@ public static class DependencyInjectionConfiguration
         services.AddScoped<IClubsDataService, ClubsDataService>();
         services.AddScoped<IPlayersDataService, PlayersDataService>();
         services.AddScoped<ITransfersDataService, TransfersDataService>();
+        services.AddScoped<IMessageProducerService, MessageProducerService>();
 
         return services;
     }
